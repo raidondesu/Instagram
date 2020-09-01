@@ -18,9 +18,8 @@ function Post() {
         src="https://venturebeat.com/wp-content/uploads/2015/01/Microsoft-sign-campus.jpg?fit=4160%2C2340&strip=all"
       />
       <h4 className="post__text">
-        <strong>Microsoft</strong>
+        <strong>Microsoft</strong> Redmond Campus
       </h4>
-      <p>Redmond Campus!</p>
       {/* image */} {/* username + caption */}
     </div>
   );
