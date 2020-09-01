@@ -9,4 +9,9 @@
 
 .post__header {
   display: flex;
+  align-items: center;
+}
+
+.post__avatar {
+  margin-right: 10px;
 }

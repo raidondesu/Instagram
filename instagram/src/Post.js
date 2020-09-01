@@ -11,8 +11,8 @@ function Post() {
           src="/static/images/avatar/1.jpg"
         />
         {/* header, avatar + username */}
+        <h3>Username</h3>
       </div>
-      <h3>Username</h3>
       <img
         className="post__image"
         src="https://venturebeat.com/wp-content/uploads/2015/01/Microsoft-sign-campus.jpg?fit=4160%2C2340&strip=all"
