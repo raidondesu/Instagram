@@ -3,7 +3,20 @@ import "./App.css";
 import Post from "./Post";
 
 function App() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([
+    {
+      username: "raidondesu",
+      caption: "Seattle !",
+      imageUrl:
+        "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/06/20/104540684-GettyImages-530874379.1910x1000.jpg",
+    },
+    {
+      username: "raidondesu",
+      caption: "Seattle !",
+      imageUrl:
+        "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/06/20/104540684-GettyImages-530874379.1910x1000.jpg",
+    },
+  ]);
 
   return (
     <div className="app">
