@@ -11,14 +11,11 @@ function Post({ username, caption, imageUrl }) {
           src="/static/images/avatar/1.jpg"
         />
         {/* header, avatar + username */}
-        <h3>Username</h3>
+        <h3>{username}</h3>
       </div>
-      <img
-        className="post__image"
-        src="https://venturebeat.com/wp-content/uploads/2015/01/Microsoft-sign-campus.jpg?fit=4160%2C2340&strip=all"
-      />
+      <img className="post__image" src={imageUrl} />
       <h4 className="post__text">
-        <strong>Microsoft</strong> Redmond Campus
+        <strong>{username}</strong> {caption}
       </h4>
       {/* image */} {/* username + caption */}
     </div>

@@ -12,9 +12,13 @@ function App() {
           alt=""
         />
       </div>
+      <Post
+        username="raidondesu"
+        caption="Seattle !"
+        imageUrl="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/06/20/104540684-GettyImages-530874379.1910x1000.jpg"
+      />
+      <Post username="Microsoft" caption="Seattle !" imageUrl="" />
       <Post username="Raidondesu" caption="Seattle !" imageUrl="" />
-      <Post />
-      <Post />
       {/* Posts */}
       {/* Posts */}
     </div>
