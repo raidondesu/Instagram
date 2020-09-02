@@ -12,7 +12,7 @@ function App() {
           alt=""
         />
       </div>
-      <Post />
+      <Post username="Raidondesu" caption="Seattle !" imageUrl="" />
       <Post />
       <Post />
       {/* Posts */}
