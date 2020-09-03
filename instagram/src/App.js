@@ -19,6 +19,9 @@ function App() {
   ]);
 
   // useEffect runs code based on a specific condition
+  useEffect(() => {
+    // code
+  }, []);
   return (
     <div className="app">
       <div className="app__header">
