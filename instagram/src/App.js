@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Post from "./Post";
 
@@ -18,6 +18,7 @@ function App() {
     },
   ]);
 
+  // useEffect runs code based on a specific condition
   return (
     <div className="app">
       <div className="app__header">
