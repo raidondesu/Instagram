@@ -27,6 +27,13 @@ function App() {
           alt=""
         />
       </div>
+      {posts.map((posts) => (
+        <Post
+          username={posts.username}
+          caption={posts.caption}
+          imageUrl={posts.imageUrl}
+        />
+      ))}
       <Post
         username="raidondesu"
         caption="Seattle !"
