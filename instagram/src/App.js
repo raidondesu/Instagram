@@ -34,17 +34,6 @@ function App() {
           imageUrl={posts.imageUrl}
         />
       ))}
-      <Post
-        username="raidondesu"
-        caption="Seattle !"
-        imageUrl="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/06/20/104540684-GettyImages-530874379.1910x1000.jpg"
-      />
-      <Post
-        username="Microsoft"
-        caption="Redmond Campus !"
-        imageUrl="https://assets.pcmag.com/media/images/564770-microsoft-redmond-campus-expansion.jpg?thumb=y&width=810&height=456"
-      />
-      <Post username="Raidondesu" caption="Seattle !" imageUrl="" />
       {/* Posts */}
       {/* Posts */}
     </div>
