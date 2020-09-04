@@ -22,7 +22,7 @@ function App() {
   // useEffect runs code based on a specific condition
   useEffect(() => {
     // code
-    db.collection("instagram-2a7e4").onSnapshot((snapshot) => {
+    db.collection("posts").onSnapshot((snapshot) => {
       setPosts(snapshot.docs.map((doc) => doc.data()));
     });
   }, []);
@@ -42,8 +42,6 @@ function App() {
           imageUrl={posts.imageUrl}
         />
       ))}
-      {/* Posts */}
-      {/* Posts */}
     </div>
   );
 }
