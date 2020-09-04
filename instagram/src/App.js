@@ -10,7 +10,12 @@ function App() {
   useEffect(() => {
     // code
     db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(snapshot.docs.map((doc) => doc.data()));
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          post: doc.data(),
+        }))
+      );
     });
   }, []);
   return (
@@ -22,11 +27,11 @@ function App() {
           alt=""
         />
       </div>
-      {posts.map((posts) => (
+      {posts.map(({ id, post }) => (
         <Post
-          username={posts.username}
-          caption={posts.caption}
-          imageUrl={posts.imageUrl}
+          username={post.username}
+          caption={post.caption}
+          imageUrl={post.imageUrl}
         />
       ))}
     </div>
