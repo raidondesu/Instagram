@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import "./App.css";
 import Post from "./Post";
-import { db } from "./Firebase";
+import { db, auth } from "./Firebase";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 function rand() {
@@ -54,7 +54,13 @@ function App() {
     });
   }, []);
 
-  const signUp = () => {};
+  const signUp = (event) => {
+    event.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .catch((error) => alert(error.message));
+  };
   return (
     <div className="app">
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -85,6 +91,9 @@ function App() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <Button type="submit" onClick={signUp}>
+              Sign Up
+            </Button>
           </form>
         </div>
       </Modal>
