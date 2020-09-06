@@ -4,7 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import "./App.css";
 import Post from "./Post";
 import { db } from "./Firebase";
-
+import Button from "@material-ui/core/Button";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -49,6 +49,8 @@ function App() {
       );
     });
   }, []);
+
+  const signUp = () => {};
   return (
     <div className="app">
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -63,6 +65,9 @@ function App() {
           alt=""
         />
       </div>
+
+      <Button onClick={() => setOpen(true)}>Sign Up</Button>
+
       {posts.map(({ id, post }) => (
         <Post
           key={id}
