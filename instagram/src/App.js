@@ -5,6 +5,7 @@ import "./App.css";
 import Post from "./Post";
 import { db } from "./Firebase";
 import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -66,6 +67,24 @@ function App() {
           className="app__headerImage"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
           alt=""
+        />
+        <Input
+          type="Text"
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
