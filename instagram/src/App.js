@@ -59,7 +59,7 @@ function App() {
     <div className="app">
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <form>
+          <form className="app__signup">
             <center>
               <img
                 className="app__headerImage"
