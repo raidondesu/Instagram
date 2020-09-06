@@ -61,6 +61,11 @@ function App() {
         // user has logged out..
       }
     });
+
+    return () => {
+      // perform some cleanup actions
+      unsubscribe();
+    };
   }, [user, username]);
   // useEffect runs code based on a specific condition
   useEffect(() => {
