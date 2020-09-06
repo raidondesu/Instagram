@@ -45,17 +45,8 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // User has logged in..
-        console.log(authUser);
+        console.table(authUser);
         setUser(authUser);
-
-        if (authUser.displayName) {
-          // dont update username
-        } else {
-          // if we just created a new profile
-          return authUser.updateProfile({
-            displayName: username,
-          });
-        }
       } else {
         setUser(null);
         // user has logged out..
@@ -85,6 +76,11 @@ function App() {
 
     auth
       .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
+      })
       .catch((error) => alert(error.message));
   };
   return (
