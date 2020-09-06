@@ -40,7 +40,28 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        // User has logged in..
+        console.log(authUser);
+        setUser(authUser);
 
+        if (authUser.displayName) {
+          // dont update username
+        } else {
+          // if we just created a new profile
+          return authUser.updateProfile({
+            displayName: username,
+          });
+        }
+      } else {
+        setUser(null);
+        // user has logged out..
+      }
+    });
+  }, [user, username]);
   // useEffect runs code based on a specific condition
   useEffect(() => {
     // code
