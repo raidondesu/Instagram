@@ -6,6 +6,8 @@ import Post from "./Post";
 import { db, auth } from "./Firebase";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
+import ImageUpload from "./ImageUpload";
+
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -96,9 +98,7 @@ function App() {
   };
   return (
     <div className="app">
-      {/* Caption input*/}
-      {/* File picker*/}
-      {/* Post Button*/}
+      <ImageUpload />
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
