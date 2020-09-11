@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
+import { storage, db } from "./Firebase";
 
 function ImageUpload() {
   const [image, setImage] = useState(null);
@@ -11,6 +12,10 @@ function ImageUpload() {
       setImage(e.target.files[0]);
     }
   };
+
+  const handleUpload = () => {
+
+  }
 
   return (
     <div>
