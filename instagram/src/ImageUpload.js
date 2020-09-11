@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ImageUpload() {
+  const [image, setImage] = useState(null);
+  const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState('');
   return (
     <div>
