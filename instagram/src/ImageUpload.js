@@ -15,6 +15,17 @@ function ImageUpload() {
 
   const handleUpload = () => {
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // progress function ..
+        const progress = Math.round(
+          (snapshot.bytestransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      }
+    )
   }
 
   return (
