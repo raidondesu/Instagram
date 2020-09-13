@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import { storage, db } from "./Firebase";
+import firebase from "firebase";
 
 function ImageUpload() {
   const [image, setImage] = useState(null);
@@ -37,7 +38,10 @@ function ImageUpload() {
           .child(image.name)
           .getDownloadURL()
           .then(url => {
-
+            // posting image inside database
+            db.collection("posts").add({
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
           })
       }
     )
