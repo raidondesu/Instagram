@@ -40,7 +40,9 @@ function ImageUpload() {
           .then(url => {
             // posting image inside database
             db.collection("posts").add({
-              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              caption: caption,
+              imageUrl: url
             })
           })
       }
