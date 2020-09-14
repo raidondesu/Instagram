@@ -98,7 +98,11 @@ function App() {
   };
   return (
     <div className="app">
-      <ImageUpload />
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+          <h3>Sorry you need to login to upload!</h3>
+        )}
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
@@ -173,11 +177,11 @@ function App() {
       {user ? (
         <Button onClick={() => auth.signOut()}>Logout</Button>
       ) : (
-        <div className="app__loginContainer">
-          <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
-        </div>
-      )}
+          <div className="app__loginContainer">
+            <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+            <Button onClick={() => setOpen(true)}>Sign Up</Button>
+          </div>
+        )}
 
       {posts.map(({ id, post }) => (
         <Post

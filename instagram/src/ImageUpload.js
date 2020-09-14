@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import { storage, db } from "./Firebase";
 import firebase from "firebase";
 
-function ImageUpload() {
+function ImageUpload({ username }) {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState('');
