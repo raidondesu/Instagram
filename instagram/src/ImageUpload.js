@@ -6,7 +6,7 @@ import firebase from "firebase";
 function ImageUpload({ username }) {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [caption, setCaption] = useState('');
+  const [caption, setCaption] = useState("");
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -22,7 +22,7 @@ function ImageUpload({ username }) {
       (snapshot) => {
         // progress function ..
         const progress = Math.round(
-          (snapshot.bytestransferred / snapshot.totalBytes) * 100
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
         setProgress(progress);
       },
@@ -37,33 +37,37 @@ function ImageUpload({ username }) {
           .ref("images")
           .child(image.name)
           .getDownloadURL()
-          .then(url => {
+          .then((url) => {
             // posting image inside database
             db.collection("posts").add({
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               caption: caption,
               imageUrl: url,
-              username: username
+              username: username,
             });
 
             setProgress(0);
             setCaption("");
             setImage(null);
-          })
+          });
       }
-    )
-  }
+    );
+  };
 
   return (
     <div>
       {/* Caption */}
       {/* File picker */}
       {/* Post Button */}
-      <input type="text" placeholder='Enter a caption..' onChange={event => setCaption(event.target.value)} value={caption} />
+      <progress className="imageupload__progress" value={progress} />
+      <input
+        type="text"
+        placeholder="Enter a caption.."
+        onChange={(event) => setCaption(event.target.value)}
+        value={caption}
+      />
       <input type="file" onChange={handleChange} />
-      <Button onClick={handleChange} >
-        Upload
-      </Button>
+      <Button onClick={handleUpload}>Upload</Button>
     </div>
   );
 }
